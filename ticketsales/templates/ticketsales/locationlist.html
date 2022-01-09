@@ -1,0 +1,37 @@
+{% extends 'ticketsales/base.html' %}
+
+{% block title %}
+    لیست مکان های برگزاری کنسرت
+{% endblock title %}
+
+
+{% block maincontent %}
+    <div class="row locationHeader">
+        <div class="col-md-3">
+            <h3>نام سالن</h3>
+        </div>
+        <div class="col-md-9">
+            <h3>آدرس</h3>
+        </div>
+    </div>
+
+    {% if locationlist %}
+        {% for location in locationlist %}
+            <div class="row location">
+                <div class="col-md-3">
+                    {{ location.name }}
+                </div>
+                <div class="col-md-9">
+                    {{ location.address }}
+                </div>
+                <div class="col-md-3">
+                    {{ location.phone }}
+                </div>
+                <div class="col-md-9">
+                    {{ location.capacity }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock maincontent %}
+

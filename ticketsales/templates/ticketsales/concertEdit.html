@@ -1,0 +1,44 @@
+{% extends 'ticketsales/base.html' %}
+
+{% block title %}
+    ویرایش کنسرت 
+{% endblock title %}
+
+
+{% block maincontent %}
+    {% if user.is_authenticated %}
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- {{ concertForm }} -->
+            
+            <div class="mainborder">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mylable">نام کنسرت: {{ concertForm.name }}</p>
+                        <p class="mylable">نام خواننده: {{ concertForm.singername }}</p>
+                        <p class="mylable">مدت کنسرت: {{ concertForm.length }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="imageBox">
+                            <img src="{{ PosterImage.url }}">
+                        </div>
+                            {{ concertForm.poster }}
+                    </div>
+                </div>
+            </div>
+            <div class="bottonborder">
+                <button type="submit" class="btn btn-success">ذخیره</button>
+            </div>
+
+        </form>
+    {% else %}
+        <h2>ابتدا وارد شوید </h2>
+        <li><a class="btn btn-success" href="/accounts/login">ورود</a></li>
+        <h2>یا ثبت نام کنید</h2>
+        <li><a class="btn btn-danger" href="/accounts/ProfileRegister">ثبت نام</a></li>
+    {% endif %}
+
+{% endblock maincontent %}
+
+
