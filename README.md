@@ -2,4 +2,4 @@
 
 Technologies used : Python - Django - Bootstrap
 
-Visit : https://mrdeveloper.pythonanywhere.com/
+Visit : https://mrdjangodeveloper.pythonanywhere.com/ticketsales/concert/list
